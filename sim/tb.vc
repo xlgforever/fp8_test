@@ -1,0 +1,13 @@
+// RTL
+../rtl/fp8_pkg.sv
+../rtl/fp8_mul.sv
+
+// Sim helpers
+./clk_gen.v
+./rst_gen.v
+./dump.sv
+
+// Testbench
+./driver.sv
+./monitor.sv
+./tb.sv
