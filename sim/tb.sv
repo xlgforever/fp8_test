@@ -33,6 +33,7 @@ module tb;
 
   driver #(
     .FORMAT(fp8_pkg::FP8_FORMAT_E4M3),
+    .VECTOR_FILE("vectors_e4m3.txt"),
     .TOTAL_VECTORS(65536)
   ) u_driver_e4 (
     .clk(clk),
@@ -54,6 +55,7 @@ module tb;
 
   monitor #(
     .FORMAT(fp8_pkg::FP8_FORMAT_E4M3),
+    .VECTOR_FILE("vectors_e4m3.txt"),
     .LATENCY(4),
     .TOTAL_VECTORS(65536)
   ) u_monitor_e4 (
@@ -69,6 +71,7 @@ module tb;
 
   driver #(
     .FORMAT(fp8_pkg::FP8_FORMAT_E5M2),
+    .VECTOR_FILE("vectors_e5m2.txt"),
     .TOTAL_VECTORS(65536)
   ) u_driver_e5 (
     .clk(clk),
@@ -90,6 +93,7 @@ module tb;
 
   monitor #(
     .FORMAT(fp8_pkg::FP8_FORMAT_E5M2),
+    .VECTOR_FILE("vectors_e5m2.txt"),
     .LATENCY(4),
     .TOTAL_VECTORS(65536)
   ) u_monitor_e5 (

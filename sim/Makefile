@@ -22,12 +22,17 @@ ifeq ($(DUMP),DUMP)
 DBG += -debug_all
 endif
 
-.PHONY: clean com run sim verdi
+.PHONY: clean com run sim verdi vectors
 
 clean:
-	rm -rf csrc simv simv.daidir ucli.key DVEfiles verdiLog *.log *.vpd *.fsdb *.h
+	rm -rf csrc simv simv.daidir ucli.key DVEfiles verdiLog *.log *.vpd *.fsdb *.h vectors_e4m3.txt vectors_e5m2.txt
 
-com:
+vectors:
+	@echo "[Makefile] generating FP8 test vectors..."
+	python3 ../scripts/gen_fp8_vectors.py
+	@echo "[Makefile] vector generation complete"
+
+com: vectors
 	$(VCS) -full64 -sverilog -timescale=1ns/1ps -kdb $(DBG) $(VERDI_PLI) $(DEFINES) -f tb.vc -top $(TOP) -l vcs_com.log
 
 run:

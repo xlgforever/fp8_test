@@ -1,5 +1,6 @@
 module monitor #(
   parameter int FORMAT = fp8_pkg::FP8_FORMAT_E4M3,
+  parameter string VECTOR_FILE = "",
   parameter int LATENCY = 4,
   parameter int TOTAL_VECTORS = 65536
 ) (
